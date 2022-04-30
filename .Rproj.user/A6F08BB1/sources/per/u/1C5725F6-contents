@@ -1,0 +1,37 @@
+library(tidyverse)
+
+# color in R
+x <- c(24,13,5,3,11,3)
+barplot(x)
+
+?colors
+colors()
+
+barplot(x,col = "aquamarine4")
+
+barplot(x,col = "#2297E6")
+
+palette()
+?palette
+
+barplot(x,col = 1:6)
+barplot(x,col= c("#2297E6","pink","black"))
+
+diamonds
+plot(diamonds$price)
+
+diamonds %>%
+  select(color) %>%
+  plot()
+
+diamonds %>%
+  select(clarity) %>%
+  table() %>% # for appropriate order
+  sort(decreasing = T) %>% 
+  barplot()
+
+
+# barchart
+
+# history
+

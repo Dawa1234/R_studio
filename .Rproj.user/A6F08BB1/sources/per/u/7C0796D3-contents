@@ -1,0 +1,75 @@
+library(tidyverse)
+
+#color in R and barchart
+x <- c(24,13,5,3,11,3)
+barplot(x)
+
+
+?colors
+colors()
+
+barplot(x, col = "chocolate3")
+
+barplot(x, col = "#1976d2")
+
+palette()
+?palette
+
+barplot(x,col = 1:6)
+
+barplot(x, col = rainbow(6))
+
+diamonds
+
+plot(diamonds$price)
+
+diamonds %>%
+  select(color) %>%
+  plot()
+
+diamonds %>%
+  select(clarity) %>%
+  table() %>% # appropriate format
+  sort(decreasing = T) %>%
+  barplot()
+
+# scatter plot and regression analaysis(simple linear reggression)
+library(tidyverse)
+
+
+
+state.x77
+
+
+
+#we need data in data frame format
+
+
+
+appdata <- state.x77 %>%
+  as_tibble() %>%
+  select(Illiteracy,Murder)
+
+
+
+appdata
+
+#correlation
+cor(appdata)
+
+#scatter plot
+plot(appdata)
+
+# with regression line
+
+lm(appdata$Murder ~ appdata$Illiteracy,data = appdata) %>%
+  abline()
+
+# fitting the linear regression
+
+result <- lm(appdata$Murder ~ appdata$Illiteracy,data = appdata)
+
+#summary
+summary(result)
+
+
